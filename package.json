@@ -1,0 +1,19 @@
+{
+  "name": "@ortoo/model-changes-emitter",
+  "version": "1.0.0",
+  "description": "Utility package for listening on model-changes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ortoo/model-changes-emitter.git"
+  },
+  "author": "James Sharp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ortoo/model-changes-emitter/issues"
+  },
+  "homepage": "https://github.com/ortoo/model-changes-emitter#readme"
+}
