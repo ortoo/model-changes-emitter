@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ortoo/model-changes-emitter/issues"
   },
-  "homepage": "https://github.com/ortoo/model-changes-emitter#readme"
+  "homepage": "https://github.com/ortoo/model-changes-emitter#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6"
+  }
 }

@@ -1,4 +1,5 @@
 const EventEmitter = require('events');
+const Promise = require('bluebird');
 
 const emittersMap = new Map();
 
@@ -9,14 +10,20 @@ class ModelChangesEmitter extends EventEmitter {
     // Get a;
     var emitters = emittersMap.get(model);
     var baseEmitters = emittersMap.get(null);
+    var proms = [];
 
     for (let set of [emitters, baseEmitters]) {
       if (set) {
         for (let emitter of set) {
-          emitter.emit(messageName, data, model);
+          let listeners = emitter.listeners(messageName);
+          for (let listener of listeners) {
+            proms.push(Promise.resolve(listener(data, model)));
+          }
         }
       }
     }
+
+    return Promise.all(proms);
   }
 
   constructor(modelType) {
