@@ -1,6 +1,6 @@
 {
   "name": "@ortoo/model-changes-emitter",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Utility package for listening on model-changes",
   "main": "index.js",
   "scripts": {
