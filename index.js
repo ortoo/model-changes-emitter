@@ -5,7 +5,7 @@ const emittersMap = new Map();
 
 class ModelChangesEmitter extends EventEmitter {
 
-  static modelChange({messageName, model, data}, ...args) {
+  static modelChange({messageName, model, data, context}, ...args) {
 
     // Get a;
     var emitters = emittersMap.get(model);
@@ -17,7 +17,7 @@ class ModelChangesEmitter extends EventEmitter {
         for (let emitter of set) {
           let listeners = emitter.listeners(messageName);
           for (let listener of listeners) {
-            proms.push(Promise.resolve(listener(data, model, ...args)));
+            proms.push(Promise.resolve(listener(context, data, model, ...args)));
           }
         }
       }
